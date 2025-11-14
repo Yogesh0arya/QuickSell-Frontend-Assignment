@@ -125,3 +125,38 @@ product.title.toLowerCase().includes(value) ||
   product.category.toLowerCase().includes(value) ||
   product.brand.toLowerCase().includes(value);
 ```
+
+---
+
+### 🔽 4. Sorting by Price (Ascending & Descending)
+
+I added a sorting feature that allows users to reorder the product list based on price.  
+The dropdown provides three options:
+
+- **default** – No sorting
+- **ascending** – Low → High
+- **descreading** – High → Low
+
+When the user changes the sorting option, the product list updates instantly.
+
+---
+
+### 🔧 Sorting Logic (Code)
+
+```javascript
+const handleChange = (e) => {
+  setSort(e.target.value);
+
+  const filter = [...newProducts];
+
+  if (e.target.value === "ascending") {
+    filter.sort((a, b) => a.price - b.price); // Low to High
+  }
+
+  if (e.target.value === "descreading") {
+    filter.sort((a, b) => b.price - a.price); // High to Low
+  }
+
+  setNewProducts(filter);
+};
+```
