@@ -125,21 +125,25 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {newProducts?.slice(0, start + SIZE)?.map((product) => (
-            <tr>
-              <td>
-                <img
-                  src={product?.images}
-                  alt="product image"
-                  className="image"
-                />
-              </td>
-              <td>{product?.title}</td>
-              <td>{product?.category}</td>
-              <td>{product?.brand}</td>
-              <td>{product?.price}</td>
-            </tr>
-          ))}
+          {newProducts?.length === 0 ? (
+            <p>No data found</p>
+          ) : (
+            newProducts?.slice(0, start + SIZE)?.map((product) => (
+              <tr key={product.id} className="row">
+                <td>
+                  <img
+                    src={product?.images}
+                    alt="product image"
+                    className="image"
+                  />
+                </td>
+                <td>{product?.title}</td>
+                <td>{product?.category}</td>
+                <td>{product?.brand}</td>
+                <td>{product?.price}</td>
+              </tr>
+            ))
+          )}
         </tbody>
         {hasMore && <p ref={ref}>Loading...</p>}
       </table>
