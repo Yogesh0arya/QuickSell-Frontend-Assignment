@@ -47,8 +47,8 @@ The goal is to create a Customers List UI that can:
 
 ```bash
 # clone repo
-git clone <repo-url>
-cd quicksell-assignment
+git clone Yogesh0arya/QuickSell-Frontend-Assignment
+cd QuickSell-Frontend-Assignment
 
 # install deps
 npm install
