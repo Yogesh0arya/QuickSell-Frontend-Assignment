@@ -5,6 +5,10 @@ Built using **React + Vite** with **plain CSS only**.
 
 ---
 
+## 📸 UI Screenshot
+
+![UI Screenshot](https://raw.githubusercontent.com/Yogesh0arya/QuickSell-Frontend-Assignment/main/public/UI.png)
+
 ## 🚀 Summary
 
 The goal is to create a Customers List UI that can:
