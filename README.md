@@ -66,3 +66,62 @@ npm run build
 # preview production build
 npm run preview
 ```
+
+# QuickSell Frontend Assignment — My Implementation
+
+This repository contains my solution for the QuickSell Frontend Assignment.  
+I built a product listing UI using **React + Vite**, with infinite scrolling, search, and sorting functionality.  
+The UI displays data from the public `dummyjson.com` API.
+
+---
+
+## 🚀 What I Implemented
+
+### ✅ 1. Used DummyJSON Product Dataset
+
+I used the product dataset from:
+
+Each product displayed in the table includes:
+
+- Product Image
+- Product Name
+- Category
+- Brand
+- Price
+
+This keeps the UI simple while demonstrating search, sorting, and infinite scrolling logic.
+
+---
+
+### ✅ 2. Infinite Scrolling
+
+I implemented **infinite scrolling** using the `IntersectionObserver` API.
+
+How it works:
+
+- Initially load a small number of products
+- Place a `<p ref={ref}>Loading...</p>` element at the bottom
+- When this element becomes visible, load more data
+- Prevent unnecessary re-renders and ensure smooth UI performance
+
+This allows continuous scrolling without pagination buttons.
+
+---
+
+### ✅ 3. Search (Name, Category, Brand)
+
+I added a search input that filters products based on:
+
+- `title` (product name)
+- `category`
+- `brand`
+
+The search is **case-insensitive** and updates the table instantly.
+
+Example implementation:
+
+```js
+product.title.toLowerCase().includes(value) ||
+  product.category.toLowerCase().includes(value) ||
+  product.brand.toLowerCase().includes(value);
+```
